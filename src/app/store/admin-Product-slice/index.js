@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export const addNewProduct = createAsyncThunk('/products/addNewProduct', async (formData) => {
-    const result = await axios.post('http://localhost:5000/api/admin/add', formData, {
+    const result = await axios.post('https://eshop-backend-32.up.railway.app/api/admin/add', formData, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -20,12 +20,12 @@ export const addNewProduct = createAsyncThunk('/products/addNewProduct', async (
 })
 
 export const fetchAllProducts = createAsyncThunk('/products/fetchAllProducts', async () => {
-    const result = await axios.get('http://localhost:5000/api/admin/get');
+    const result = await axios.get('https://eshop-backend-32.up.railway.app/api/admin/get');
     console.log("API Response:", result?.data);
     return result?.data
 })
 export const editProducts = createAsyncThunk('/products/editProducts', async ({ id, formData }) => {
-    const result = await axios.put(`http://localhost:5000/api/admin/edit/${id}`, formData, {
+    const result = await axios.put(`https://eshop-backend-32.up.railway.app/api/admin/edit/${id}`, formData, {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -35,7 +35,7 @@ export const editProducts = createAsyncThunk('/products/editProducts', async ({ 
     return result?.data
 })
 export const deleteProducts = createAsyncThunk('/products/deleteProducts', async (id, formData) => {
-    const result = await axios.delete(`http://localhost:5000/api/admin/delete/${id}`, formData, {
+    const result = await axios.delete(`https://eshop-backend-32.up.railway.app/api/admin/delete/${id}`, formData, {
         headers: {
             'Content-Type': 'application/json',
         },

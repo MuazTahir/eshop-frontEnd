@@ -17,7 +17,7 @@ export const apiData = createAsyncThunk('apidata',
 
 export const fetchMongoProducts = createAsyncThunk('mongoApi',
     async () => {
-        const response = await axios.get('http://localhost:5000/api/getAllProducts')
+        const response = await axios.get('https://eshop-backend-32.up.railway.app/api/getAllProducts')
         return response.data
     }
 )

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 // Async thunk to fetch orders
 export const fetchOrders = createAsyncThunk('order/fetchOrders', async () => {
-    const response = await axios.get('http://localhost:5000/api/orders'); // Adjust API path as needed
+    const response = await axios.get('https://eshop-backend-32.up.railway.app/api/orders'); // Adjust API path as needed
     return response.data?.orderShowCase;
 });
 

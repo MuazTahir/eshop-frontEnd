@@ -13,7 +13,7 @@ export const fetchShopProducts = createAsyncThunk(
     'shopProducts/fetchShopProducts',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.get('http://localhost:5000/api/admin/get');
+            const response = await axios.get('https://eshop-backend-32.up.railway.app/api/admin/get');
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data);

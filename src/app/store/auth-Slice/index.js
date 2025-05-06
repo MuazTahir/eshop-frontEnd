@@ -11,7 +11,7 @@ const initialState = {
 export const SignUpUser = createAsyncThunk('auth/SignUp',
 
     async (FormData) => {
-        const response = await axios.post('http://localhost:5000/api/auth/SignUp', FormData, {
+        const response = await axios.post('https://eshop-backend-32.up.railway.app/api/auth/SignUp', FormData, {
             withCredentials: true
         })
         return response.data
@@ -20,7 +20,7 @@ export const SignUpUser = createAsyncThunk('auth/SignUp',
 
 export const LoginUser = createAsyncThunk('auth/Login',
     async (FormData) => {
-        const response = await axios.post('http://localhost:5000/api/auth/Login', FormData, {
+        const response = await axios.post('https://eshop-backend-32.up.railway.app/api/auth/Login', FormData, {
             withCredentials: true
         })
         return response.data
@@ -28,7 +28,7 @@ export const LoginUser = createAsyncThunk('auth/Login',
 )
 
 export const verify = createAsyncThunk('auth/check-auth', async () => {
-    const res = await axios.get('http://localhost:5000/api/auth/check-auth', {
+    const res = await axios.get('https://eshop-backend-32.up.railway.app/api/auth/check-auth', {
         withCredentials: true
     })
     return res.data
@@ -36,7 +36,7 @@ export const verify = createAsyncThunk('auth/check-auth', async () => {
 })
 
 export const logoutUser = createAsyncThunk('auth/logout', async () => {
-    const res = await axios.post('http://localhost:5000/api/auth/logout', {
+    const res = await axios.post('https://eshop-backend-32.up.railway.app/api/auth/logout', {
         withCredentials: true
     })
 

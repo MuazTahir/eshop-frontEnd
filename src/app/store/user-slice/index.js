@@ -12,7 +12,7 @@ export const fetchUser = createAsyncThunk(
     'user/fetchUser',
     async (_, { rejectWithValue }) => {
         try {
-            const res = await axios.get('http://localhost:5000/api/users');
+            const res = await axios.get('https://eshop-backend-32.up.railway.app/api/users');
             // console.log("API Response:", res.data);
             return res.data.users; // Make sure to return only the array of users
         } catch (err) {

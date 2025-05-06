@@ -13,7 +13,7 @@ export const dailyAnalyticalDataFetch = createAsyncThunk(
     'analytical/dataFetch',
     async (_, { rejectWithValue }) => {
         try {
-            const res = await axios.get('http://localhost:5000/api/userCount');
+            const res = await axios.get('https://eshop-backend-32.up.railway.app/api/userCount');
             return res.data.data;
 
         } catch (error) {
