@@ -52,7 +52,7 @@ function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img src="/images/nn1.svg" className="h-8 sm:h-9 mr-2 rounded-full" alt="Flowbite Logo" />
-            <span className="text-xl font-bold text-[#002626] dark:text-white">Shop_Flow</span>
+            <span className="text-xl sm:hidden font-bold text-[#002626] dark:text-white">Shop_Flow</span>
           </Link>
 
           {/* Center nav links */}
