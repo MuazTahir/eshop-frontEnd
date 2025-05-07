@@ -13,7 +13,7 @@ const { default: axios } = require("axios");
 async function getProduct(id) {
     try {
 
-        const res = await axios.get(`http://localhost:5000/api/apiData/${id}`)
+        const res = await axios.get(`https://eshop-backend-32.up.railway.app/api/apiData/${id}`)
         return res.data
     } catch (error) {
         console.log('the error of dynamic id:', error);
