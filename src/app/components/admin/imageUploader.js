@@ -42,7 +42,7 @@ function Imageupload({
         setImageLoadingState(true)
         const data = new FormData();
         data.append('my_file', imageFile);
-        const response = await axios.post("http://localhost:5000/api/admin/upload-image", data);
+        const response = await axios.post("https://eshop-backend-32.up.railway.app/api/admin/upload-image", data);
         console.log(response, 'response')
         if (response?.data?.success) {
             setUploadImgURL(response.data.result.url)
