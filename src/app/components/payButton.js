@@ -4,10 +4,10 @@ import axios from 'axios'
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const url = 'https://eshop-backend-32.up.railway.app/api' 
+const url = 'https://eshop-backend-32.up.railway.app/api'
 
 const PayButton = ({ cartItems }) => {
-  const user = useSelector((state) => state.auth.user) 
+  const user = useSelector((state) => state.auth.user)
 
   const handleCheckOut = () => {
     axios.post(`${url}/create-checkout-session`, {

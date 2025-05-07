@@ -5,7 +5,7 @@
 import Imageupload from '@/app/components/admin/imageUploader';
 import AdminProductTilt from '@/app/components/admin/product-tilt';
 import CommonForm from '@/app/components/common/Form';
-import { addNewProduct, deleteProducts, fetchAllProducts } from '@/app/store/admin-Product-slice';
+import { addNewProduct, deleteProducts, editProducts, fetchAllProducts } from '@/app/store/admin-Product-slice';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { addProductFormElements } from '@/config';
@@ -55,7 +55,7 @@ function AdminProducts() {
                         setopenCreateProductDialog(false);
                         setImageFile(null);
                         setFormData(initialState);
-                        toast({ title: 'Product Added Successfully!' });
+                        toast('Product Added Successfully!');
                     }
                 });
     }
@@ -65,7 +65,7 @@ function AdminProducts() {
             .then((data) => {
                 if (data?.payload?.success) {
                     dispatch(fetchAllProducts());
-                    toast({ title: 'Product is Deleted!', variant: 'destructive' });
+                    toast('Product is Deleted!');
                 }
             });
     }
