@@ -4,7 +4,7 @@ import axios from 'axios'
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const url = 'http://localhost:5000/api' 
+const url = 'https://eshop-backend-32.up.railway.app/api' 
 
 const PayButton = ({ cartItems }) => {
   const user = useSelector((state) => state.auth.user) 
