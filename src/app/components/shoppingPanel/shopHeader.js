@@ -32,7 +32,7 @@ function ShopHeader({ setOpen }) {
             className="h-8 sm:h-9 mr-2 rounded-full"
             alt="Flowbite Logo"
           />
-          <span className="text-xl sm:hidden font-bold text-[#002626] dark:text-white">
+          <span className="text-xl hidden sm:block font-bold text-[#002626] dark:text-white">
             Shop_Flow
           </span>
         </Link>
