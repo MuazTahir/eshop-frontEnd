@@ -5,12 +5,14 @@ import { logoutUser } from '@/app/store/auth-Slice';
 import { Button } from '@/components/ui/button';
 import { AlignJustify, LogOut, ShoppingBag } from 'lucide-react';
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
 import Link from 'next/link';
 
 function ShopHeader({ setOpen }) {
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartCount = cartItems?.length || 0
 
   async function handleLogout() {
     const action = await dispatch(logoutUser());
@@ -64,10 +66,17 @@ function ShopHeader({ setOpen }) {
 
         {/* Right side controls */}
         <div className="flex flex-1 justify-end items-center">
-          <div className="mr-4">
+          <div className="mr-4 relative">
             <Link href="/Cart">
               <ShoppingBag />
             </Link>
+            {
+              cartCount > 0 && (
+                <span className='absolute -top-1 -right-2 bg-[#0E4749] text-white text-sm rounded-full font-bold w-5 h-5 flex items-center justify-center'>
+                  {cartCount}
+                </span>
+              )
+            }
           </div>
           <div className="w-10 h-10 rounded-full bg-gray-500 mr-4 hidden lg:block">
             <img
