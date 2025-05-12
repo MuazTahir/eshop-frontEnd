@@ -19,7 +19,9 @@ function Login() {
     const dispatch = useDispatch();
     const route = useRouter()
 
-    const returnTo = useSearchParams()
+    const serchParams = useSearchParams();
+
+    const returnTo = serchParams.get('returnTo') || '/';
 
     async function onSubmit(e) {
         e.preventDefault();
