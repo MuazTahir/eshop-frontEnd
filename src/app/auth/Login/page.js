@@ -4,7 +4,7 @@ import CommonForm from '@/app/components/common/Form'
 import { LoginUser } from '@/app/store/auth-Slice'
 import { LoginFormControls } from '@/config'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toast } from 'sonner'
@@ -19,6 +19,8 @@ function Login() {
     const dispatch = useDispatch();
     const route = useRouter()
 
+    const returnTo = useSearchParams()
+
     async function onSubmit(e) {
         e.preventDefault();
 
@@ -28,6 +30,7 @@ function Login() {
             console.log('Login', result);
             if (result?.payload?.success) {
                 toast.success(result?.payload?.message)
+                route.push(returnTo)
             } else {
                 toast.error(result?.payload?.message, {
                     description: 'Please! Sign In First'

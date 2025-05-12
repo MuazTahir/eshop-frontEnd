@@ -4,7 +4,7 @@ import { AlignJustify, LogOut } from 'lucide-react'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-function AdminHeader() {
+function AdminHeader({ setOpen }) {
 
   const dispatch = useDispatch();
 

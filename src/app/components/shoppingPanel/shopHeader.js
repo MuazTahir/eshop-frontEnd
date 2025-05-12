@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 import Link from 'next/link';
 
-function ShopHeader() {
+function ShopHeader({ setOpen }) {
   const dispatch = useDispatch();
 
   async function handleLogout() {

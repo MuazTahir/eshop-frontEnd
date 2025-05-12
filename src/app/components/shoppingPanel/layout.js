@@ -1,10 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import ShopHeader from './shopHeader'
 import CheckAuth from '../auth/Check-auth'
 import { useSelector } from 'react-redux'
 
 const ShoppingLayout = ({ children }) => {
+    const [open, setOpen] = useState(false)
 
     const { isAuthenticated, user, isLoading } = useSelector((state) => state.auth)
 
@@ -15,7 +16,7 @@ const ShoppingLayout = ({ children }) => {
 
             <div className='flex flex-col bg-white min-h-screen text-black overflow-hidden'>
                 {/* shopping header */}
-                <ShopHeader />
+                <ShopHeader setOpen={setOpen} />
 
                 <main className='flex flex-col w-full'>
                     {children}

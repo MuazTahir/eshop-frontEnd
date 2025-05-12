@@ -18,7 +18,7 @@ export default function ProductClient({ product }) {
             toast.error('Sign in to your Account', {
                 description: 'You must be logged in to add items to the cart.'
             });
-            router.push('/auth/Login');
+            router.push(`/auth/Login?redirect=add-to-cart&productId=${product._id}&returnTo=/product/${product._id}`);
             return;
         }
 
